@@ -9,6 +9,6 @@ It is necessary to download Manopt (and to add it to Matlab's path) to run these
 The code pdf_print_code.m produces PDFs from Matlab figures. It relies on the utility pdfcrop being installed. If this is an issue, simply remove the call to pdf_print_code in the main script.
 
 Authors:
-Naman Agarwal, Nicolas Boumal, Brian Bullins, Coralia Cartis
+Bryan Zhu, Naman Agarwal, Nicolas Boumal, Brian Bullins, Coralia Cartis
 
-Oct. 4, 2018
+May 2, 2019
