@@ -10,6 +10,7 @@ clear; clc;
 
 % Fix randomness once and for all
 rng(2018);
+compare = @arc_sub_comparison;
 
 cd example_problems;
 addpath(genpath(pwd()));
@@ -17,7 +18,7 @@ addpath(genpath(pwd()));
 %% Run ARC on a problem
 problem = rotation_synchronization(3, 50, .75);
 init = problem.M.rand();
-solver = struct('solver', @arc_sub_comparison, 'theta', 0.05, 'tolgradnorm', 1e-8);
+solver = struct('solver', compare, 'theta', 0.05, 'tolgradnorm', 1e-8);
 solver.statsfun = statsfunhelper(statscounters({'hesscalls', 'gradhesscalls'}));
 [x, cost, info] = manoptsolve(problem, init, solver);
 substats_l = {info.lanczos};
